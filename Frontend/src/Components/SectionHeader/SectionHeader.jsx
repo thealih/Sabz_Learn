@@ -9,7 +9,7 @@ const SectionHeader = ({ title, desc, btnTitle }) => {
       {btnTitle && (
         <div className="courses-header__left">
           <a href="#" className="courses-header__link">
-            تمامی دوره ها
+            {btnTitle}
             <i className="fas fa-arrow-left courses-header__icon"></i>
           </a>
         </div>
