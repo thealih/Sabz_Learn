@@ -1,3 +1,4 @@
+import ArticleBox from "../ArticleBox/ArticleBox";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import "./LastArticle.css";
 const LastArticle = () => {
@@ -10,8 +11,30 @@ const LastArticle = () => {
           btnTitle="تمامی مقاله ها"
         />
 
-        <div class="articles__content">
-          <div class="row"></div>
+        <div className="articles__content">
+          <div className="row">
+            <ArticleBox
+              title="نحوه نصب کتابخانه در پایتون | آموزش نصب کتابخانه پایتون
+"
+              cover="images/blog/3.jpg"
+              desc="زبان پایتون هم مانند دیگر زبان­های برنامه نویسی رایج، دارای کتابخانه های مختلفی برای تسریع...
+"
+            />
+            <ArticleBox
+              title="نحوه نصب کتابخانه در پایتون | آموزش نصب کتابخانه پایتون
+"
+              cover="images/blog/3.jpg"
+              desc="زبان پایتون هم مانند دیگر زبان­های برنامه نویسی رایج، دارای کتابخانه های مختلفی برای تسریع...
+"
+            />
+            <ArticleBox
+              title="نحوه نصب کتابخانه در پایتون | آموزش نصب کتابخانه پایتون
+"
+              cover="images/blog/3.jpg"
+              desc="زبان پایتون هم مانند دیگر زبان­های برنامه نویسی رایج، دارای کتابخانه های مختلفی برای تسریع...
+"
+            />
+          </div>
         </div>
       </div>
     </section>
