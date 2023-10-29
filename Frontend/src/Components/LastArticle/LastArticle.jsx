@@ -9,6 +9,10 @@ const LastArticle = () => {
           desc="پیش به سوی ارتقای دانش"
           btnTitle="تمامی مقاله ها"
         />
+
+        <div class="articles__content">
+          <div class="row"></div>
+        </div>
       </div>
     </section>
   );
