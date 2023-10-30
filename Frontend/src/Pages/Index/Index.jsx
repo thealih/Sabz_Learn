@@ -1,4 +1,5 @@
 import AboutUs from "../../Components/AboutUs/AboutUs";
+import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 import LastArticle from "../../Components/LastArticle/LastArticle";
 import LastCourses from "../../Components/LastCourse/LastCourse";
@@ -15,6 +16,7 @@ const Index = () => {
       <PopularCourses />
       <PresellCourses />
       <LastArticle />
+      <Footer />
     </>
   );
 };
