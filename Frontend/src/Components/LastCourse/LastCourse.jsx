@@ -8,7 +8,8 @@ const LastCourses = () => {
         <SectionHeader
           title="جدیدترین دوره ها"
           desc="سکوی پرتاب به سوی موفقیت ها"
-          btnTitle={"تمامی دوره ها"}
+          btnTitle="تمامی دوره ها"
+          btnHref="courses"
         />
         <div className="courses-content">
           <div className="container">
