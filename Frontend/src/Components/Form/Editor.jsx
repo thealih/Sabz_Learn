@@ -7,7 +7,8 @@ const Editor = ({ value, setValue }) => {
     <CKEditor
       editor={ClassicEditor}
       data={value}
-      onChange={(event) => {
+      onChange={(event, editor) => {
+        const data = editor.getData();
         setValue(data);
       }}
     />

@@ -54,7 +54,7 @@ export default function Articles() {
   const removeArticle = (articleID) => {
     const localStorageDate = JSON.parse(localStorage.getItem("user"));
     swal({
-      title: "آیا از حذف مقاله اطمینان دارید؟`",
+      title: "آیا از حذف مقاله اطمینان دارید؟",
       icon: "warning",
       buttons: ["نه", "آره"],
     }).then((result) => {
@@ -75,6 +75,33 @@ export default function Articles() {
             });
           }
         });
+      }
+    });
+  };
+  const createArticle = (event) => {
+    event.preventDefault();
+    const localStorageData = JSON.parse(localStorage.getItem("user"));
+    let formData = new FormData();
+    formData.append("title", formState.inputs.title.value);
+    formData.append("shortName", formState.inputs.shortName.value);
+    formData.append("description", formState.inputs.description.value);
+    formData.append("categoryID", articleCategory);
+    formData.append("cover", articleCover);
+    formData.append("body", articleBody);
+
+    fetch(`http://localhost:4000/v1/articles`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${localStorageData.token}`,
+      },
+      body: formData,
+    }).then((res) => {
+      if (res.ok) {
+        swal({
+          title: "مقاله جدید با موفقیت ایجاد شد",
+          icon: "success",
+          buttons: "تایید",
+        }).then(getAllArticles());
       }
     });
   };
@@ -181,7 +208,7 @@ export default function Articles() {
             <div class="col-12">
               <div class="bottom-form">
                 <div class="submit-btn">
-                  <input type="submit" value="افزودن" />
+                  <input type="submit" value="افزودن" onClick={createArticle} />
                 </div>
               </div>
             </div>
