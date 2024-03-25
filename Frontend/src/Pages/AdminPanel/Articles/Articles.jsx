@@ -141,7 +141,7 @@ export default function Articles() {
                   محتوا
                 </label>
                 <Editor value={articleBody} setValue={setArticleBody} />
-                <span class="error-message text-danger"></span>
+                <span class="error-message text-danger">Hi every one</span>
               </div>
             </div>
             <div class="col-6">
