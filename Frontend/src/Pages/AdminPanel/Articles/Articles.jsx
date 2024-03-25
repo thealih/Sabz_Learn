@@ -149,7 +149,6 @@ export default function Articles() {
                 <label class="input-title" style={{ display: "block" }}>
                   چکیده
                 </label>
-                {/* <textarea style={{ width: "100%", height: "200px" }}></textarea> */}
 
                 <Input
                   element="textarea"
