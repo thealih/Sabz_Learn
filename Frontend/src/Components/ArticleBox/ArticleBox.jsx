@@ -10,7 +10,7 @@ const ArticleBox = ({ title, description, cover, shortName }) => {
             className="article-card__link-img"
           >
             <img
-              src={`/${cover}`}
+              src={`http://localhost:4000/courses/covers/${cover}`}
               className="article-card__img"
               alt="Article Cover"
             />

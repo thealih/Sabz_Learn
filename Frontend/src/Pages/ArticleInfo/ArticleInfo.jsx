@@ -6,6 +6,7 @@ import Breadcrumb from "../../Components/Breadcrumb/Breadcrumb";
 import CommentTextArea from "../../Components/CommentsTextArea/CommentsTextArea";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import domPurify from "dompurify";
 
 const ArticleInfo = () => {
   const [articleDetails, setArticleDetails] = useState([]);
@@ -56,14 +57,12 @@ const ArticleInfo = () => {
                     <i className="far fa-user article-header__icon"></i>
                     <span className="article-header__text">
                       ارسال شده توسط
-                      {""}
                       {/* {articleCreator.name} */}
                     </span>
                   </div>
                   <div className="article-header__category article-header__item">
                     <i className="far fa-clock article-header__icon"></i>
                     <span className="article-header__text">
-                      {" "}
                       ارسال شده توسط قدیر
                     </span>
                   </div>
@@ -107,7 +106,7 @@ const ArticleInfo = () => {
                   </span>
                 </div>
 
-                <p className="article__paragraph paragraph">
+                {/* <p className="article__paragraph paragraph">
                   جاوا اسکریپت یکی از زبان‌های برنامه‌نویسی اصلی حوزه فرانت‌اند
                   است که به واسطه فریم ورک‌های آن می‌توان انواع وب سایت‌ها،
                   اپلیکیشن‌ها و وب اپلیکیشن‌ها را طراحی کرد. به طور کلی بعد از
@@ -120,7 +119,7 @@ const ArticleInfo = () => {
                   در ادامه مطلب قصد داریم سایت‌های شاخص آموزش این زبان
                   برنامه‌نویسی در جهان را به شما معرفی کنیم و در آخر بگوییم که
                   بهترین سایت آموزش جاوا اسکریپت کدام است.
-                </p>
+                </p> */}
 
                 <div className="article-read">
                   <span className="article-read__title">
@@ -149,8 +148,13 @@ const ArticleInfo = () => {
                   alt="Article Image"
                   className="article__seconadary-banner"
                 />
-                <div className="article-section">
-                  <h2 className="article-section__title">
+                <div
+                  className="article-section"
+                  dengerouslySetInnerHTML={{
+                    __html: domPurify.sanitize(articleDetails.body),
+                  }}
+                >
+                  {/* <h2 className="article-section__title">
                     معرفی بهترین سایت ‌های آموزش جاوا اسکریپت:
                   </h2>
                   <p className="paragraph article-section__text">
@@ -168,23 +172,7 @@ const ArticleInfo = () => {
                     src="/images/blog/4.png"
                     alt="article body img"
                     className="article-section__img"
-                  />
-                </div>
-                <div className="article-section">
-                  <h2 className="article-section__title">
-                    معرفی بهترین سایت ‌های آموزش جاوا اسکریپت:
-                  </h2>
-                  <p className="paragraph article-section__text">
-                    توجه داشته باشید که تمام وب سایت‌هایی که به عنوان بهترین
-                    سایت آموزش جاوا اسکریپت در ادامه معرفی می‌کنیم، بین‌المللی
-                    هستند و منابع موجود در آن‌ها به زبان انگلیسی است. در نتیجه
-                    شما باید یا تسلط متوسط و حداقلی به زبان انگلیسی داشته باشید
-                    و یا اینکه با استفاده از گوگل ترنسلیت منابع موجود را ترجمه
-                    کرده و از آن‌ها استفاده کنید. به همین دلیل در انتهای محتوا
-                    به شما خواهیم گفت که راه آسان دیگری برای یادگیری زبان جاوا
-                    اسکریپت وجود دارد که شما بتوانید به واسطه آن به صورت رایگان
-                    و به زبان فارسی این زبان را یاد بگیرید.
-                  </p>
+                  /> */}
                 </div>
 
                 <div className="article-social-media">
