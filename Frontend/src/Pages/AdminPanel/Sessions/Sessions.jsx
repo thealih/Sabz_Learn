@@ -144,6 +144,7 @@ export default function Sessions() {
                 <select
                   class="select"
                   onChange={(event) => setSessionCourse(event.target.value)}
+                  className="form-select form-select-lg"
                 >
                   <option value="-1">دوره مدنظر را انتخاب کنید</option>
                   {courses.map((course) => (
@@ -161,6 +162,7 @@ export default function Sessions() {
                 <input
                   type="file"
                   onChange={(event) => setSessionVideo(event.target.files[0])}
+                  className="form-control form-control-lg"
                 />
                 <span class="error-message text-danger"></span>
               </div>
